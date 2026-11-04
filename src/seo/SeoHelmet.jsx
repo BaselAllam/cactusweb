@@ -1,79 +1,79 @@
 import { Helmet } from "react-helmet";
-import defaultOgImage from "@/assets/LogoFull.png";
+import defaultOgImage from "@/assets/CactusLogoIcon.png";
 
-const BASE_URL = "https://sabeelfarm.com";
+const BASE_URL = "https://cactusmiles.com";
 
 export default function SeoHelmet({ page, lang = "en" }) {
   const SEO = {
     home: {
       en: {
-        title: "Sabeel Stable | Horse Riding, Training, Boarding & Equestrian Club",
-        desc: "Experience premier equestrian activities at Sabeel Stable. Offering professional horse riding lessons, horse boarding, guided trail rides, and horse training.",
+        title: "Cactus Miles | Tech-Driven Domestic E-Commerce Shipping & Logistics in Egypt",
+        desc: "Empower your online business with fast, reliable domestic shipping across Egypt. Powered by smart routing, real-time tracking, and seamless e-commerce integration.",
         url: "/"
       },
       ar: {
-        title: "إسطبل سبيل | ركوب الخيل، التدريب، الإيواء والنادي الفروسي",
-        desc: "استمتع بأفضل تجربة فروسية في إسطبل سبيل. نقدم دروس ركوب الخيل للمبتدئين والمحترفين، إيواء وتدريب الخيل، والجولات الخلاء.",
+        title: "كاكتوس مايلز | شحن داخلي وتوصيل متطور للتجارة الإلكترونية في مصر",
+        desc: "حلول شحن وتوصيل محلي ذكية للشركات والمتاجر الإلكترونية في مصر. تتبع لحظي، سرعة في التسليم، وتقنيات ربط متكاملة لتنمو بتجارتك.",
         url: "/"
       }
     },
     about: {
       en: {
-        title: "About Us | Sabeel Horse Riding Stable & Sanctuary",
-        desc: "Learn about Sabeel Stable, our passion for horses, expert trainers, and our commitment to providing top-tier equestrian care and riding experiences.",
+        title: "About Us | Transforming E-Commerce Logistics in Egypt - Cactus Miles",
+        desc: "Discover how Cactus Miles leverages proprietary tech and a nationwide network to revolutionize last-mile delivery and fulfillment for businesses in Egypt.",
         url: "/about"
       },
       ar: {
-        title: "عن الإسطبل | حكاية إسطبل سبيل للفروسية",
-        desc: "تعرف على إسطبل سبيل، شغفنا بالخيل، فريق المدربين المحترفين، والتزامنا بتقديم أعلى مستويات الرعاية وتجارب ركوب الخيل.",
+        title: "عن الشركة | نعيد تعريف خدمات الشحن والتوصيل في مصر - كاكتوس مايلز",
+        desc: "تعرف على كاكتوس مايلز وشغفنا بالحلول اللوجستية الرقمية. نربط التجار والعملاء في كافة محافظات مصر عبر بنية تكنولوجية متطورة.",
         url: "/about"
       }
     },
     contact: {
       en: {
-        title: "Contact Us | Book Riding Lessons & Stabling - Sabeel Stable",
-        desc: "Get in touch with Sabeel Stable to book riding lessons, inquire about horse boarding, schedule private events, or visit our facilities.",
+        title: "Contact & Partnership | Onboard Your Business - Cactus Miles",
+        desc: "Get in touch to open a merchant account, integrate your online store API, schedule bulk pick up, or consult with our logistics experts.",
         url: "/contact"
       },
       ar: {
-        title: "تواصل معنا | حجز دروس الركوب وإيواء الخيل - إسطبل سبيل",
-        desc: "تواصل مع إسطبل سبيل للحجز، والاستفسار عن خدمات إيواء وتدريب الخيل، وإقامة الفعاليات الخاصة أو زيارة المزرعة والإسطبل.",
+        title: "تواصل معنا | اشحن مع كاكتوس مايلز وربط متجرك - تواصل مباشر",
+        desc: "تواصل معنا لفتح حساب تجاري، الربط البرمجي للمتاجر، طلب مندوبين للشحن السريع، أو الاستفسار عن باقات الشحن للشركات في مصر.",
         url: "/contact"
       }
     },
     faq: {
       en: {
-        title: "FAQs | Riding Gear, Safety, Packages & Boarding - Sabeel Stable",
-        desc: "Find answers about riding attire, beginner safety guidelines, horse boarding packages, session booking, and age requirements at Sabeel Stable.",
+        title: "FAQs | Delivery Timelines, Cash on Delivery & Merchant Tools - Cactus Miles",
+        desc: "Find answers regarding coverage areas across Egypt, daily COD remittances, API integration, return management, and parcel tracking.",
         url: "/faqs"
       },
       ar: {
-        title: "الأسئلة الشائعة | معدات الركوب، السلامة، والباقات - إسطبل سبيل",
-        desc: "إجابات عن الملابس المناسبة، قواعد السلامة للمبتدئين، باقات إيواء الخيل، مواعيد الجلسات، والشروط في إسطبل سبيل.",
+        title: "الأسئلة الشائعة | التغطية، تحصيل الأموال، والتكامل البرمجي - كاكتوس مايلز",
+        desc: "إجابات عن مناطق التغطية في مصر، تحصيل الدفع عند الاستلام، الربط مع المتاجر، مواعيد التوريد، وتتبع الشحنات.",
         url: "/faqs"
       }
     },
     services: {
       en: {
-        title: "Services & Programs | Riding Lessons, Boarding & Tours",
-        desc: "Explore all Sabeel Stable services: beginner & advanced riding lessons, full-service horse boarding, desert/trail rides, and equine care.",
+        title: "Services & Solutions | Domestic Delivery, COD & Fulfillment - Cactus Miles",
+        desc: "Explore our tech-driven logistics suite: same-day & next-day delivery, automated COD management, e-commerce API integrations, and smart returns.",
         url: "/services"
       },
       ar: {
-        title: "خدماتنا وبرامجنا | دروس الركوب، الإيواء، والجولات - إسطبل سبيل",
-        desc: "استكشف خدمات إسطبل سبيل: دروس ركوب الخيل لجميع المستويات، إيواء واستضافة الخيل، رحلات وجولات ركوب الخيل، والعناية بالفروسية.",
+        title: "خدماتنا اللوجستية | الشحن السريع، التحصيل، والتكامل الذكي - كاكتوس مايلز",
+        desc: "استكشف خدمات كاكتوس مايلز: توصيل في نفس اليوم/اليوم التالي داخل مصر، تحصيل الدفع عند الاستلام، الربط البرمجي، وإدارة المرتجعات.",
         url: "/services"
       }
     },
     serviceDetails: {
       en: {
-        title: "Service Details | Sabeel Stable Equestrian Club",
-        desc: "View session details, duration, trainer info, equipment requirements, and pricing for our horse riding packages and stable services.",
+        title: "Service Details | E-Commerce Delivery & Logistics - Cactus Miles",
+        desc: "Review coverage zones, SLAs, weight tiers, API setup documentation, and competitive merchant pricing for Egyptian domestic shipping.",
         url: "/service-details"
       },
       ar: {
-        title: "تفاصيل الخدمة | نادي وإسطبل سبيل للفروسية",
-        desc: "اطلع على تفاصيل الحصة، المدة، معلومات المدربين، المستلزمات المطلوبة، والأسعار لباقات ركوب وإيواء الخيل.",
+        title: "تفاصيل الخدمة | أسعار الشحن ومناطق التغطية في مصر - كاكتوس مايلز",
+        desc: "اطلع على تفاصيل باقات الشحن الداخلي، أسعار المحافظات، اتفافيات مستوى الخدمة SLA، والدعم الفني للتجارة الإلكترونية.",
         url: "/service-details"
       }
     },
@@ -84,9 +84,9 @@ export default function SeoHelmet({ page, lang = "en" }) {
   const url = BASE_URL + current.url;
 
   const keywordsEn =
-    "Sabeel Stable, horse riding, equestrian club, horse riding lessons, horse boarding, horseback riding, trail rides, horse training, Arabian horses, stable services, riding school";
+    "Cactus Miles, domestic shipping Egypt, e-commerce logistics Egypt, last mile delivery, fast parcel delivery, cash on delivery Egypt, COD remittance, courier service Cairo, e-commerce shipping API, smart logistics technology";
   const keywordsAr =
-    "سبيل, إسطبل سبيل, ركوب الخيل, نادي فروسية, تعليم ركوب الخيل, إيواء الخيل, تدريب الخيل, خيل عربية اصيلة, مدرسة فروسية, رحلات خيل, فروسية";
+    "كاكتوس مايلز, شحن داخلي مصر, لوجستيات التجارة الإلكترونية, توصيل طرود, الدفع عند الاستلام مصر, شركة شحن متاجر, ربط متجر الكتروني, شحن القاهرة والمحافظات, تتبع الشحنات, شحن سريع للشركات";
 
   return (
     <Helmet>
@@ -105,7 +105,7 @@ export default function SeoHelmet({ page, lang = "en" }) {
       <meta property="og:description" content={current.desc} />
       <meta property="og:image" content={defaultOgImage} />
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content={lang === "ar" ? "إسطبل سبيل" : "Sabeel Stable"} />
+      <meta property="og:site_name" content={lang === "ar" ? "كاكتوس مايلز" : "Cactus Miles"} />
       <meta property="og:locale" content={lang === "ar" ? "ar_EG" : "en_US"} />
 
       {/* Theme & Icons */}

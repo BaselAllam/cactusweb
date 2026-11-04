@@ -16,7 +16,7 @@ const copy = {
     required: "This field is required", badEmail: "Enter a valid email", badPhone: "Enter a valid phone number", tooLong: "Too long",
     failed: "Something went wrong. Please try again.", thanks: "Thank you!", thanksSub: "Your message has been sent.", another: "Send another message",
     success: "Success", sorry: "Sorry", toastThanks: "Thanks for contacting Sabeel Farm. We'll get back to you soon.",
-    info: [["Address", "Shorouk City, Cairo, Egypt"], ["Phone", "+20 10 1143 8199"], ["Email", "info@sabeelfarm.com"], ["Hours", "Sat – Thu, 10am – 10pm"]],
+    info: [["Address", "Shorouk City, Cairo, Egypt"], ["Phone", "+20 11 1585 7994"], ["Email", "info@cactusmiles.com"], ["Hours", "Sat – Thu, 10am – 6pm"]],
   },
   ar: {
     eyebrow: "تواصل معنا", title: "يسعدنا نسمع منك", sub: "عندك سؤال عن منتج أو طلب أو هدية؟ ابعتلنا رسالة.",
@@ -24,7 +24,7 @@ const copy = {
     required: "الحقل ده مطلوب", badEmail: "اكتب بريد إلكتروني صحيح", badPhone: "اكتب رقم هاتف صحيح", tooLong: "النص طويل أوي",
     failed: "حصلت مشكلة. جرّب تاني.", thanks: "شكراً ليك!", thanksSub: "رسالتك وصلتنا.", another: "ابعت رسالة تانية",
     success: "تم بنجاح", sorry: "معلش", toastThanks: "شكراً لتواصلك مع مزرعة سبيل، هنرد عليك قريب.",
-    info: [["العنوان", "مدينة الشروق، القاهرة، مصر"], ["الهاتف", "+20 10 1143 8199"], ["البريد", "info@sabeelfarm.com"], ["المواعيد", "السبت – الخميس، 10 ص – 10 م"]],
+    info: [["العنوان", "مدينة الشروق، القاهرة، مصر"], ["الهاتف", "+20 11 1585 7994"], ["البريد", "info@cactusmiles.com"], ["المواعيد", "السبت – الخميس، 10 ص – 10 م"]],
   },
 };
 

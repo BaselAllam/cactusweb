@@ -12,7 +12,7 @@ type LangContextValue = {
 const LangContext = createContext<LangContextValue | undefined>(undefined);
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>("ar");
+  const [lang, setLang] = useState<Language>("en");
   const value = useMemo<LangContextValue>(
     () => ({ lang, dir: lang === "ar" ? "rtl" : "ltr", setLang, toggleLang: () => setLang((current) => current === "en" ? "ar" : "en") }),
     [lang],

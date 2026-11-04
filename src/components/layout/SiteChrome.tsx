@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { ArrowUp, Facebook, Gift, Instagram, ShieldCheck, Truck } from "lucide-react";
+import { ArrowUp, Facebook, Gift, Instagram, Menu, ShieldCheck, Truck, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLang } from "@/contexts/LangContext";
-import logoImg from "@/assets/LogoTrans.png";
+import logoImg from "@/assets/CactusLogoDark.png";
 import { useCategories } from "@/hooks/useSiteData";
 import LoadingSpinner from "../LoadingSpinner";
 
@@ -16,8 +16,8 @@ export function Logo({ className = "h-11 w-auto" }: { className?: string }) {
     <img
       src={logoImg}
       alt="Sabeel Farm"
-      width={250}
-      height={250}
+      width={120}
+      height={120}
       decoding="async"
       draggable={false}
       className={`select-none object-contain ${className}`}
@@ -29,7 +29,6 @@ function NavItem({ i, label, className, onClick, active }: { i: number; label: s
   const to = i === 0 ? "/" : i === 1 ? "/services" : i === 2 ? "/about" : i === 3 ? "/contact" : "/faqs";
   return <Link to={to} onClick={onClick} aria-current={active ? "page" : undefined} className={`${className} ${active ? "!text-primary after:!w-full" : ""}`}>{label}</Link>;
 }
-
 export function SiteHeader() {
   const { lang, setLang } = useLang();
   const t = chrome[lang];
@@ -60,25 +59,43 @@ export function SiteHeader() {
   );
 
   return <header className={`sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ${scrolled || menu ? "h-20 border-border/70 bg-background/90 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]" : "h-20 border-border/30 bg-background/60"}`}>
-    <div className="mx-auto grid h-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-5 px-5 sm:px-8">
+    <div className="mx-auto grid h-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-5 px-4 sm:px-8">
       <div className="flex items-center gap-1 justify-self-start rounded-full border border-border/70 p-0.5 text-[11px] tracking-widest">
         {langBtn("en", "EN")}{langBtn("ar", "عربي")}
       </div>
 
       <Link to="/" aria-label="Sabeel Farm home" className="group justify-self-center text-primary transition-transform duration-500 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
-        <Logo className={`w-auto transition-all duration-500 group-hover:drop-shadow-[0_0_10px_hsl(var(--primary)/0.55)] ${scrolled || menu ? "h-20" : "h-20"}`} />
+        <Logo className={`w-auto transition-all duration-500 group-hover:drop-shadow-[0_0_10px_hsl(var(--primary)/0.55)] ${scrolled || menu ? "h-7" : "h-7"}`} />
       </Link>
 
       <nav aria-label="Main" className="hidden items-center gap-9 justify-self-end lg:flex">
         {t.nav.map((item, i) => <NavItem key={item} i={i} label={item} active={(i === 0 && pathname === "/") || (i === 1 && pathname.startsWith("/services")) || (i === 2 && pathname.startsWith("/about")) || (i === 3 && pathname.startsWith("/contact")) || (i === 4 && pathname === "/faqs")} className={link} />)}
       </nav>
+
+      <button
+          type="button"
+          onClick={() => setMenu((v) => !v)}
+          aria-expanded={menu}
+          aria-controls="mobile-nav"
+          aria-label={menu ? (lang === "ar" ? "إغلاق القائمة" : "Close menu") : (lang === "ar" ? "فتح القائمة" : "Open menu")}
+          className="inline-flex size-10 sm:size-11 items-center justify-center rounded-full border border-border/70 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 justify-self-end lg:hidden"
+        >
+          {menu ? <X className="size-5" /> : <Menu className="size-5" />}
+      </button>
+
     </div>
 
     <nav id="mobile-nav" aria-label="Mobile" className={`absolute inset-x-0 top-full h-[calc(100svh-4rem)] overflow-y-auto bg-background/98 backdrop-blur-xl transition-all duration-500 lg:hidden ${menu ? "visible opacity-100" : "invisible opacity-0"}`}>
       <div className="mx-auto flex max-w-md flex-col px-8 pt-6">
         {t.nav.map((item, i) => (
-          <NavItem key={item} i={i} label={item} onClick={() => setMenu(false)} active={(i === 0 && pathname === "/") || (i === 1 && pathname.startsWith("/services")) || (i === 2 && pathname.startsWith("/about")) || (i === 3 && pathname.startsWith("/contact")) || (i === 4 && pathname === "/faqs")}
-            className="flex items-center justify-between border-b border-border/40 py-5 font-display text-2xl font-light tracking-wide transition-colors hover:text-primary" />
+          <NavItem 
+            key={item} 
+            i={i} 
+            label={item} 
+            onClick={() => setMenu(false)} 
+            active={(i === 0 && pathname === "/") || (i === 1 && pathname.startsWith("/services")) || (i === 2 && pathname.startsWith("/about")) || (i === 3 && pathname.startsWith("/contact")) || (i === 4 && pathname === "/faqs")}
+            className="flex items-center justify-between border-b border-border/40 py-5 font-display text-2xl font-light tracking-wide text-foreground hover:text-primary" 
+          />
         ))}
         <div className="mt-10 flex justify-center text-primary"><Logo className="h-14 w-auto opacity-40" /></div>
       </div>
@@ -136,7 +153,7 @@ export function SiteFooter({ id }: { id?: string }) {
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         {/* Brand */}
         <div className="lg:col-span-4">
-          <Link to="/" aria-label="Sabeel Farm home" className="inline-block text-primary transition-opacity hover:opacity-80"><Logo className="h-[4.5rem] w-auto" /></Link>
+          <Link to="/" aria-label="Sabeel Farm home" className="inline-block text-primary transition-opacity hover:opacity-80"><Logo className="h-[2.5rem] w-auto" /></Link>
           <p className="mt-5 max-w-xs font-display text-xl font-light leading-snug text-foreground/90">{t.slogan}</p>
           <div className="mt-6 flex items-center gap-2.5 text-primary">
             {socials.map((s) => (
